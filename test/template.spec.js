@@ -5,31 +5,36 @@ describe('Template', () => {
 
     describe('itemCounter', () => {
 
-        it('should return "0 items left" when no active items remain', () => {
+        const testCases = [
+            {
+                when: 'no active items remain',
+                input: 0,
+                output: '0 items left'
+            },
+            {
+                when: 'only one active item remains',
+                input: 1,
+                output: '1 item left'
+            },
+            {
+                when: 'only two active items remain',
+                input: 2,
+                output: '2 items left'
+            }
+        ];
 
-            const template = new Template();
+        testCases.forEach(testCase => {
 
-            const result = template.itemCounter(0);
+            it(`should return "${testCase.output}" when ${testCase.when}`, () => {
 
-            expect(result).to.equal('0 items left');
-        });
+                const template = new Template();
 
-        it('should return "1 item left" when only one active item remains', () => {
+                const result = template.itemCounter(testCase.input);
 
-            const template = new Template();
+                expect(result).to.equal(testCase.output);
 
-            const result = template.itemCounter(1);
+            });
 
-            expect(result).to.equal('1 item left');
-        });
-
-        it('should return "2 items left" when only two active items remain', () => {
-
-            const template = new Template();
-
-            const result = template.itemCounter(2);
-
-            expect(result).to.equal('2 items left');
         });
 
     });
