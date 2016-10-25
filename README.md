@@ -134,3 +134,10 @@ We have to isolate the dependency.
 Both tests are now failing.
 
 We do not modify any app code in this step.
+
+## Step 4
+
+We create a new class for the `LocalStorageService`.
+It is still an implicit dependency, but it now wraps the localStorage and is easier to hide or replace.
+
+The tests have not been modified and are still failing.
