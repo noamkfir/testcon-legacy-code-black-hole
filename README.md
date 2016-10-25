@@ -182,3 +182,11 @@ Mocha has built-in support for promises.
 Instead of using the async `done` callback, we simply return the promise.
 
 Only the test code is modified.
+
+## Step 10
+
+The new promise now resolves the filtered todos.
+
+All the tests are passing.
+
+Only the app code has been modified.
