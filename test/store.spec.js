@@ -2,6 +2,9 @@ import Store from "../src/store";
 import { expect } from 'chai';
 import StorageService from '../src/storageService';
 
+import { polyfill } from 'es6-promise';
+polyfill();
+
 describe('Store', () => {
 
     describe('find', () => {
