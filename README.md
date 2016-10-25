@@ -141,3 +141,14 @@ We create a new class for the `LocalStorageService`.
 It is still an implicit dependency, but it now wraps the localStorage and is easier to hide or replace.
 
 The tests have not been modified and are still failing.
+
+## Step 5
+
+Through a series of imperfect refactorings, we convert the implicit dependency on `LocalStorageService` to an explicit dependency on a new base class `StorageService`.
+`StorageService` is a basic in-memory implementation that does not depend on `window.localStorage`.
+
+Using `StorageService` in the tests makes them atomic and independent of each other.
+The app code uses the `LocalStorageService` to initialize the `Store`.
+
+Both the app code and the test code have been modified.
+Both tests now pass.
