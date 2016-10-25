@@ -1,15 +1,16 @@
 export default class LocalStorageService {
 
-    constructor() {
+    constructor(name) {
+        this.name = name;
         this.storage = window.localStorage;
     }
 
-    getData(name) {
-        return JSON.parse(this.storage.getItem(name) || '[]')
+    getData() {
+        return JSON.parse(this.storage.getItem(this.name) || '[]')
     }
 
-    setData(name, value) {
-        this.storage.setItem(name, JSON.stringify(value));
+    setData(value) {
+        this.storage.setItem(this.name, JSON.stringify(value));
     }
 
 }

@@ -7,7 +7,7 @@ export default class Store {
 	 * @param {function()} [callback] Called when the Store is ready
 	 */
 	constructor(name, callback) {
-		const storageService = new LocalStorageService();
+		const storageService = new LocalStorageService(name);
 
 		/**
 		 * @type {ItemList}
@@ -20,7 +20,7 @@ export default class Store {
 		 * @returns {ItemList} Current array of todos
 		 */
 		this.getLocalStorage = () => {
-			return liveTodos || storageService.getData(name);
+			return liveTodos || storageService.getData();
 		};
 
 		/**
@@ -29,7 +29,7 @@ export default class Store {
 		 * @param {ItemList} todos Array of todos to write
 		 */
 		this.setLocalStorage = (todos) => {
-			storageService.setData(name, liveTodos = todos);
+			storageService.setData(liveTodos = todos);
 		};
 
 		if (callback) {
