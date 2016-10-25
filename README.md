@@ -200,3 +200,7 @@ In a real app, we would try to write tests for those usages before refactoring t
 To verify the changes don't break anything, we run the tests and the app.
 
 Only app code is modified in this step.
+
+## Step 12
+
+We remove the callback implementation and the tests that use it.
