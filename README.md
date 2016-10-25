@@ -161,3 +161,10 @@ We observe that `find` does not currently return a value, so we decide to add a 
 We start by adding tests that are similar to the existing tests except for the use of promises.
 
 We do not modify any app code in this step.
+
+## Step 7
+
+We observe that the new tests are failing because we don't pass a callback and not because there is no promise.
+So we write an appropriate test and fix the code for the new test.
+
+We modify both the app code and the test code.
