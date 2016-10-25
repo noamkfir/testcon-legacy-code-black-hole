@@ -70,3 +70,9 @@ In `test/template.spec.js`, we change the expected result from `0 items left` to
 The relevant test case fails. All other test cases continue to pass.
 
 We do not modify any app code in this step.
+
+## Step 5
+
+We modify the app code to make the failing test pass.
+
+The exercise is complete.
