@@ -49,3 +49,9 @@ Our first step is to create tests (specs) in `test/template.spec.js` that descri
 However, our tests must fail so that we can guarantee correct results after we fix them.
 
 We do not modify any app code in this step.
+
+## Step 2
+
+We fix the failing tests by correcting the expectations.
+
+We do not modify any app code in this step.
