@@ -62,6 +62,15 @@ describe('Store', () => {
 
         });
 
+        it('should not fail when no callback parameter is passed', () => {
+
+            const storageService = new StorageService('store-name');
+            const store = new Store(storageService);
+
+            store.find({});
+
+        });
+
     });
 
 });
