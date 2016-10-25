@@ -55,3 +55,9 @@ We do not modify any app code in this step.
 We fix the failing tests by correcting the expectations.
 
 We do not modify any app code in this step.
+
+## Step 3
+
+We refactor the tests to remove duplication.
+
+We do not modify any app code in this step.
