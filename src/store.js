@@ -60,6 +60,10 @@ export default class Store {
                 return true;
             }));
         }
+
+        return new Promise((resolve, reject) => {
+
+		});
 	}
 
 	/**
