@@ -16,6 +16,20 @@ describe('Store', () => {
 
         });
 
+        it('should pass a non-empty array to the callback', (done) => {
+
+            window.localStorage.setItem('store-name', {
+                title: 'sample item'
+            });
+            const store = new Store('store-name');
+
+            store.find({}, (items) => {
+                expect(items).to.have.length(1);
+                done();
+            });
+
+        });
+
     });
 
 });
