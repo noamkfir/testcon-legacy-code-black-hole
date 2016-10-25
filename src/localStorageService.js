@@ -5,8 +5,8 @@ export default class LocalStorageService {
         this.storage = window.localStorage;
     }
 
-    getData() {
-        return JSON.parse(this.storage.getItem(this.name) || '[]')
+    getData(defaultValue) {
+        return JSON.parse(this.storage.getItem(this.name)) || defaultValue;
     }
 
     setData(value) {

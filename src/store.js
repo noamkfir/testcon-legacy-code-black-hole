@@ -20,7 +20,7 @@ export default class Store {
 		 * @returns {ItemList} Current array of todos
 		 */
 		this.getLocalStorage = () => {
-			return liveTodos || storageService.getData();
+			return liveTodos || storageService.getData([]);
 		};
 
 		/**
