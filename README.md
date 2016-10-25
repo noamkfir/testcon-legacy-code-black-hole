@@ -61,3 +61,12 @@ We do not modify any app code in this step.
 We refactor the tests to remove duplication.
 
 We do not modify any app code in this step.
+
+## Step 4
+
+We change the expected result of the test case that represents the scenario we want to modify.
+In `test/template.spec.js`, we change the expected result from `0 items left` to `No items left`.
+
+The relevant test case fails. All other test cases continue to pass.
+
+We do not modify any app code in this step.
