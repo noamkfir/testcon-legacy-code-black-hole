@@ -50,19 +50,21 @@ export default class Store {
 		const todos = this.getLocalStorage();
 		let k;
 
-		if(callback) {
-            callback(todos.filter(todo => {
-                for (k in query) {
-                    if (query[k] !== todo[k]) {
-                        return false;
-                    }
+        const filtered = todos.filter(todo => {
+            for (k in query) {
+                if (query[k] !== todo[k]) {
+                    return false;
                 }
-                return true;
-            }));
+            }
+            return true;
+        });
+
+        if(callback) {
+            callback(filtered);
         }
 
         return new Promise((resolve, reject) => {
-
+			resolve(filtered);
 		});
 	}
 
