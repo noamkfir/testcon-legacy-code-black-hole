@@ -35,3 +35,17 @@ Our goal is to change the message in this case to `No items left`.
 To follow step-by-step, check out the numbered tags one after the other.
 Compare each step's code to the previous step to see what changed.
 This file is also updated for each step.
+
+## Step 1
+
+We identify the change point as the `Template#itemCounter` method in `src/template.js`.
+This function receives a number and returns a formatted message.
+
+By analyzing the code, we can see that it has no dependencies.
+We also observe that we do not have to change the function signature or add dependencies.
+Our change appears to be purely internal.
+
+Our first step is to create tests (specs) in `test/template.spec.js` that describe the existing behavior.
+However, our tests must fail so that we can guarantee correct results after we fix them.
+
+We do not modify any app code in this step.
