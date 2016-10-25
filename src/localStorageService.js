@@ -1,7 +1,9 @@
-export default class LocalStorageService {
+import StorageService from './storageService';
+
+export default class LocalStorageService extends StorageService {
 
     constructor(name) {
-        this.name = name;
+        super(name);
         this.storage = window.localStorage;
     }
 

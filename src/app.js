@@ -5,8 +5,10 @@ import { $on } from './helpers';
 import Template from './template';
 import Store from './store';
 import View from './view';
+import LocalStorageService from "./localStorageService";
 
-const store = new Store('todos-vanilla-es6');
+const storageService = new LocalStorageService('todos-vanilla-es6');
+const store = new Store(storageService);
 
 const template = new Template();
 const view = new View(template);

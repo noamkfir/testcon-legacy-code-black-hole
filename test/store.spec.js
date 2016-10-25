@@ -1,5 +1,6 @@
 import Store from "../src/store";
 import { expect } from 'chai';
+import StorageService from '../src/storageService';
 
 describe('Store', () => {
 
@@ -7,7 +8,8 @@ describe('Store', () => {
 
         it('should pass an empty array to the callback', (done) => {
 
-            const store = new Store('store-name');
+            const storageService = new StorageService('store-name');
+            const store = new Store(storageService);
 
             store.find({}, (items) => {
                 expect(items).to.have.length(0);
@@ -18,10 +20,11 @@ describe('Store', () => {
 
         it('should pass a non-empty array to the callback', (done) => {
 
-            window.localStorage.setItem('store-name', {
+            const storageService = new StorageService('store-name');
+            storageService.setData([{
                 title: 'sample item'
-            });
-            const store = new Store('store-name');
+            }]);
+            const store = new Store(storageService);
 
             store.find({}, (items) => {
                 expect(items).to.have.length(1);
