@@ -168,3 +168,10 @@ We observe that the new tests are failing because we don't pass a callback and n
 So we write an appropriate test and fix the code for the new test.
 
 We modify both the app code and the test code.
+
+## Step 8
+
+PhantomJS, which is used to run the tests, does not yet support native promises.
+So we install and execute a polyfill to the test code.
+
+In a real app, we would find a more general way to resolve this issue for all our test code.
