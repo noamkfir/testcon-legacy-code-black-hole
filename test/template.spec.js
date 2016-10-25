@@ -11,7 +11,7 @@ describe('Template', () => {
 
             const result = template.itemCounter(0);
 
-            expect(result).to.equal('5 items left');
+            expect(result).to.equal('0 items left');
         });
 
         it('should return "1 item left" when only one active item remains', () => {
@@ -20,7 +20,7 @@ describe('Template', () => {
 
             const result = template.itemCounter(1);
 
-            expect(result).to.equal('5 items left');
+            expect(result).to.equal('1 item left');
         });
 
         it('should return "2 items left" when only two active items remain', () => {
@@ -29,7 +29,7 @@ describe('Template', () => {
 
             const result = template.itemCounter(2);
 
-            expect(result).to.equal('5 items left');
+            expect(result).to.equal('2 items left');
         });
 
     });
