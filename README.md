@@ -86,3 +86,33 @@ The current behavior displays the items in the order in which they were created 
 
 Implementing full-fledged sorting is beyond the scope of this exercise.
 We will sort the items alphabetically to help prepare for more flexible sorting eventually.
+
+## Step 1
+
+We analyze the code to identify the change point.
+
+We find that:
+* `Template#itemList` receives an array of items and converts it to an HTML string.
+* `View#showItems` receives that array and calls `Template#itemList`.
+* `Controller#_filter` retrieves the items from `Store#find` and then calls `View#showItems`.
+* `Store#find` loads the items from local storage and filters them according to the `query` parameter.
+
+We will try to apply the sorting logic in the controller.
+`Controller#_filter` calls `Store#find` and passes it two arguments.
+The first argument is a query and the second is a callback.
+The callback is `View#showItems`.
+
+We need to sort the items after they are retrieved and before they are displayed.
+We can add more callbacks to `Store#find` or we can replace current the callback function.
+Both solutions are not very extensible.
+
+A better solution is to replace the callback mechanism with a composable promise.
+However, there are multiple usages of the `Store#find` method.
+
+Our first step is to try to write a test that preserves its current behavior.
+The test must initially fail.
+
+Note that in a real app, we will write multiple tests to preserve the existing behavior.
+Here we write just one for demonstrative purposes.
+
+We do not modify any app code in this step.
