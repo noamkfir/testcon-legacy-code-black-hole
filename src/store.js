@@ -1,4 +1,5 @@
 import {Item, ItemList, ItemQuery, ItemUpdate, emptyItemQuery} from './item';
+import LocalStorageService from './localStorageService';
 
 export default class Store {
 	/**
@@ -6,10 +7,7 @@ export default class Store {
 	 * @param {function()} [callback] Called when the Store is ready
 	 */
 	constructor(name, callback) {
-		/**
-		 * @type {Storage}
-		 */
-		const localStorage = window.localStorage;
+		const storageService = new LocalStorageService();
 
 		/**
 		 * @type {ItemList}
@@ -22,7 +20,7 @@ export default class Store {
 		 * @returns {ItemList} Current array of todos
 		 */
 		this.getLocalStorage = () => {
-			return liveTodos || JSON.parse(localStorage.getItem(name) || '[]');
+			return liveTodos || storageService.getData(name);
 		};
 
 		/**
@@ -31,7 +29,7 @@ export default class Store {
 		 * @param {ItemList} todos Array of todos to write
 		 */
 		this.setLocalStorage = (todos) => {
-			localStorage.setItem(name, JSON.stringify(liveTodos = todos));
+			storageService.setData(name, liveTodos = todos);
 		};
 
 		if (callback) {
