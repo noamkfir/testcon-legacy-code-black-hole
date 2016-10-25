@@ -145,6 +145,7 @@ export default class Controller {
 				'active': {completed: false},
 				'completed': {completed: true}
 			}[route])
+				.then(items => items.sort((prev, next) => prev.title.localeCompare(next.title)))
 				.then(this.view.showItems.bind(this.view));
 			/* jscs:enable disallowQuotedKeysInObjects */
 		}
