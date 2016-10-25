@@ -190,3 +190,13 @@ The new promise now resolves the filtered todos.
 All the tests are passing.
 
 Only the app code has been modified.
+
+## Step 11
+
+Refactored all the code that calls `Store#find` to use the promise implementation.
+
+In a real app, we would try to write tests for those usages before refactoring them.
+
+To verify the changes don't break anything, we run the tests and the app.
+
+Only app code is modified in this step.
