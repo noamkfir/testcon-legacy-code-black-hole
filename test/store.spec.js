@@ -10,7 +10,7 @@ describe('Store', () => {
             const store = new Store('store-name');
 
             store.find({}, (items) => {
-                expect(items).to.have.length(1);
+                expect(items).to.have.length(0);
                 done();
             });
 
