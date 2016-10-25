@@ -33,6 +33,6 @@ export default class Template {
 	 * @returns {!string} Contents for an "items left" indicator
 	 */
 	itemCounter(activeTodos) {
-		return `${activeTodos} item${activeTodos !== 1 ? 's' : ''} left`;
+		return `${activeTodos === 0 ? 'No' : activeTodos} item${activeTodos !== 1 ? 's' : ''} left`;
 	}
 }
