@@ -122,3 +122,15 @@ We do not modify any app code in this step.
 We fix the failing test.
 
 We do not modify any app code in this step.
+
+## Step 3
+
+We add another test to preserve the behavior of a non-empty data source.
+
+We discover that the `Store` relies on `window.localStorage`, an implicit dependency.
+We also discover that after adding sample data to local storage, it affects the first test, which means that the tests are not atomic.
+We have to isolate the dependency.
+
+Both tests are now failing.
+
+We do not modify any app code in this step.
