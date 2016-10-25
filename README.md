@@ -204,3 +204,15 @@ Only app code is modified in this step.
 ## Step 12
 
 We remove the callback implementation and the tests that use it.
+
+## Step 13
+
+We implement sorting by adding a single line of code to the `Controller#_filter` method.
+
+This demonstrates how our changes have made the code more composable.
+
+The code is still not perfect, but it is improved.
+
+This is untested code.
+In a real app, we would probably continue the refactoring/restructuring process
+and add tests to verify the composable pipeline works, as well as the sorting.
