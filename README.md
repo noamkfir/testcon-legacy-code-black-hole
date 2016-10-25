@@ -152,3 +152,12 @@ The app code uses the `LocalStorageService` to initialize the `Store`.
 
 Both the app code and the test code have been modified.
 Both tests now pass.
+
+## Step 6
+
+We want to replace the callback parameter in `Store#find` with a returned promise.
+We observe that `find` does not currently return a value, so we decide to add a promise without hurting existing behavior.
+
+We start by adding tests that are similar to the existing tests except for the use of promises.
+
+We do not modify any app code in this step.
