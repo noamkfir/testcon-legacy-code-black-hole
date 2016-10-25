@@ -17,3 +17,21 @@ the tags `exercise-<number>-start` and `exercise-<number>-finish`.
 To see the final state of the project, with all the exercises in their final states, check out the tag `finish`.
 
 
+# Legacy Code Exercise 1 - Step-By-Step
+
+In this exercise, we want to change the message displayed by the app when no active items remain.
+
+The current behavior has two cases:
+
+1. When there is only one active item, the following message is displayed: `1 item left`
+2. In all other cases, the following message is displayed: `<number> items left` (for example, `3 items left`)
+
+Note that we are not considering negative and special numbers (infinity, max, etc.).
+
+This means that when no active items remain, the message displayed is `0 items left`.
+
+Our goal is to change the message in this case to `No items left`.
+
+To follow step-by-step, check out the numbered tags one after the other.
+Compare each step's code to the previous step to see what changed.
+This file is also updated for each step.
