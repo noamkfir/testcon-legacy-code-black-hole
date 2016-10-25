@@ -116,3 +116,9 @@ Note that in a real app, we will write multiple tests to preserve the existing b
 Here we write just one for demonstrative purposes.
 
 We do not modify any app code in this step.
+
+## Step 2
+
+We fix the failing test.
+
+We do not modify any app code in this step.
