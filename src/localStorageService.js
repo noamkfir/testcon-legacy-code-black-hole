@@ -9,7 +9,7 @@ export default class LocalStorageService {
     }
 
     setData(name, value) {
-        localStorage.setItem(name, JSON.stringify(value));
+        this.storage.setItem(name, JSON.stringify(value));
     }
 
 }
