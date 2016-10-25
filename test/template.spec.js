@@ -9,7 +9,7 @@ describe('Template', () => {
             {
                 when: 'no active items remain',
                 input: 0,
-                output: '0 items left'
+                output: 'No items left'
             },
             {
                 when: 'only one active item remains',
