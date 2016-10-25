@@ -36,20 +36,19 @@ describe('Store', () => {
 
         });
 
-        it('should pass an empty array to the promise callback', (done) => {
+        it('should pass an empty array to the promise callback', () => {
 
             const storageService = new StorageService('store-name');
             const store = new Store(storageService);
 
-            store.find({})
+            return store.find({})
                 .then((items) => {
                     expect(items).to.have.length(0);
-                    done();
                 });
 
         });
 
-        it('should pass a non-empty array to the promise callback', (done) => {
+        it('should pass a non-empty array to the promise callback', () => {
 
             const storageService = new StorageService('store-name');
             storageService.setData([{
@@ -57,10 +56,9 @@ describe('Store', () => {
             }]);
             const store = new Store(storageService);
 
-            store.find({})
+            return store.find({})
                 .then((items) => {
                     expect(items).to.have.length(1);
-                    done();
                 });
 
         });
