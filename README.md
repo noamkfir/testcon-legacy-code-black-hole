@@ -175,3 +175,10 @@ PhantomJS, which is used to run the tests, does not yet support native promises.
 So we install and execute a polyfill to the test code.
 
 In a real app, we would find a more general way to resolve this issue for all our test code.
+
+## Step 9
+
+Mocha has built-in support for promises.
+Instead of using the async `done` callback, we simply return the promise.
+
+Only the test code is modified.
