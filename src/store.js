@@ -144,16 +144,17 @@ export default class Store {
 	 * @param {function(number, number, number)} callback Called when the count is completed
 	 */
 	count(callback) {
-		this.find(emptyItemQuery, data => {
-			const total = data.length;
+		this.find(emptyItemQuery)
+            .then(data => {
+                const total = data.length;
 
-			let i = total;
-			let completed = 0;
+                let i = total;
+                let completed = 0;
 
-			while (i--) {
-				completed += data[i].completed;
-			}
-			callback(total, total - completed, completed);
-		});
+                while (i--) {
+                    completed += data[i].completed;
+                }
+                callback(total, total - completed, completed);
+            });
 	}
 }

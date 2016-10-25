@@ -76,10 +76,11 @@ export default class Controller {
 	 * @param {!number} id ID of the Item in edit
 	 */
 	editItemCancel(id) {
-		this.store.find({id}, data => {
-			const title = data[0].title;
-			this.view.editItemDone(id, title);
-		});
+		this.store.find({id})
+			.then(data => {
+				const title = data[0].title;
+				this.view.editItemDone(id, title);
+			});
 	}
 
 	/**
@@ -119,11 +120,12 @@ export default class Controller {
 	 * @param {boolean} completed Desired completed state
 	 */
 	toggleAll(completed) {
-		this.store.find({completed: !completed}, data => {
-			for (let {id} of data) {
-				this.toggleCompleted(id, completed);
-			}
-		});
+		this.store.find({completed: !completed})
+			.then(data => {
+				for (let {id} of data) {
+					this.toggleCompleted(id, completed);
+				}
+			});
 
 		this._filter();
 	}
@@ -142,7 +144,8 @@ export default class Controller {
 				'': emptyItemQuery,
 				'active': {completed: false},
 				'completed': {completed: true}
-			}[route], this.view.showItems.bind(this.view));
+			}[route])
+				.then(this.view.showItems.bind(this.view));
 			/* jscs:enable disallowQuotedKeysInObjects */
 		}
 
