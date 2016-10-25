@@ -46,7 +46,7 @@ export default class Store {
 	 *	 // data shall contain items whose completed properties are true
 	 * })
 	 */
-	find(query, callback) {
+	find(query) {
 		const todos = this.getLocalStorage();
 		let k;
 
@@ -58,10 +58,6 @@ export default class Store {
             }
             return true;
         });
-
-        if(callback) {
-            callback(filtered);
-        }
 
         return new Promise((resolve, reject) => {
 			resolve(filtered);
