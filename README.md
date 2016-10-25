@@ -76,3 +76,13 @@ We do not modify any app code in this step.
 We modify the app code to make the failing test pass.
 
 The exercise is complete.
+
+
+# Legacy Code Exercise 2 - Step-By-Step
+
+In this exercise, we want to add support for sorting the items.
+
+The current behavior displays the items in the order in which they were created and does not actually sort them.
+
+Implementing full-fledged sorting is beyond the scope of this exercise.
+We will sort the items alphabetically to help prepare for more flexible sorting eventually.
